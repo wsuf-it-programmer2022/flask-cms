@@ -1,0 +1,9 @@
+{% extends "base.html.j2" %}
+{% block title %} Create post {% endblock %}
+{% block content %}
+  <h1>Create post</h1>
+
+  <form action="/add" method="POST">
+    {{form.title()}}
+  </form>
+{% endblock %}
