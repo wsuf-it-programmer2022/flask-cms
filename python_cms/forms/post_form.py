@@ -2,6 +2,7 @@ from flask_wtf import FlaskForm
 from wtforms import StringField, TextAreaField, SubmitField
 from wtforms.validators import Length, InputRequired
 from flask_wtf.file import FileField, FileAllowed
+from flask_ckeditor import CKEditorField
 
 
 class PostForm(FlaskForm):
@@ -17,7 +18,16 @@ class PostForm(FlaskForm):
       'Teaser Image',
       validators=[FileAllowed(['jpg', 'png', 'jpeg'], 'Images only!')])
 
-  body = TextAreaField(
+  # body = TextAreaField(
+  #     'Body',
+  #     validators=[
+  #         InputRequired(),
+  #         Length(min=4,
+  #                max=8000,
+  #                message="Body must be between 4 and 8000 characters")
+  #     ])
+
+  body = CKEditorField(
       'Body',
       validators=[
           InputRequired(),

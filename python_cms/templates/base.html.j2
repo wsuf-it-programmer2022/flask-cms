@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-exp.min.css">
     <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-icons.min.css">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    {% block headsource %} {% endblock %}
   </head>
   <body>
     <header class="navbar">
@@ -25,7 +26,6 @@
               <a href="{{ url_for('auth.logout') }}" >Log out</a>
             </div>
           </div>
-
         {% else %}
           <a href="{{ url_for('auth.login') }}" class="btn btn-link">Log in</a>
         {% endif %}

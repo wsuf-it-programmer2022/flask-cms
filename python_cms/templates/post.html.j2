@@ -1,0 +1,11 @@
+{% extends "base.html.j2" %}
+{% block title %} Hello World {% endblock %}
+{% block content %}
+  {% if post.id is not defined %}
+    <h1>Post not found</h1>
+  {% else %}
+  <h1>{{ post.title }}</h1>
+  <img src="/files/{{post.teaser_image}}" class="img-responsive article-image-inner" alt="">
+  {{ post.body|safe }}
+  {% endif %}
+{% endblock %}

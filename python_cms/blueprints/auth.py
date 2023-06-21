@@ -28,9 +28,11 @@ def login():
 
   print(request_uri)
 
+  # this redirect will take user to google login page
   return redirect(request_uri)
 
 
+# this is the callback route that google will redirect to after login
 @auth_blueprint.route('/authorize')
 def authorize():
   code = request.args.get("code")
